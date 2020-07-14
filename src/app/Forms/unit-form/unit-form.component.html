@@ -1,0 +1,32 @@
+<form [formGroup]="unitForm"  (ngSubmit)="onSubmit()">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add Unit</h4>
+        <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Unitcode</label>
+            <input style="margin-bottom: 5px" type="text" formControlName="unitcode" class="form-control">
+            <label>Title</label>
+            <input style="margin-bottom: 5px" type="text" formControlName="title" class="form-control">
+            <label>Category</label>
+            <select style="margin-bottom: 5px" type="text" formControlName="category" class="form-control">
+                <option value=""></option>
+                <option *ngFor="let c of categories$ | async" [value]="c.payload.key">
+                    {{ c.payload.val().name }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary">Save</button>
+    </div>
+
+</form>
+
+

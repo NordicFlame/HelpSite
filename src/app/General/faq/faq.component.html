@@ -1,0 +1,25 @@
+<div *ngIf="appUser">
+    <button type="button" class="btn btn-lg btn-outline-primary" (click)="open()" *ngIf="appUser.isAdmin">New +</button>
+    <hr>
+</div>
+
+<h1>Frequently Asked Questions</h1>
+<hr class="hr-primary" />
+
+<div class="active-cyan-3 active-cyan-4 mb-4">
+    <p>
+        <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search Faq...">
+    </p>
+</div>
+
+<hr>
+
+<div class="faqStyle">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel *ngFor="let i of filteredUnits" title="{{i.question}}">
+            <ng-template ngbPanelContent>
+                <p>{{ i.answer}}</p>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>

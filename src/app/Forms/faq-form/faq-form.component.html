@@ -1,0 +1,22 @@
+<form [formGroup]="faqForm"  (ngSubmit)="onSubmit()" >
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add FAQ Item</h4>
+        <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Unitcode</label>
+            <input style="margin-bottom: 5px" type="text" formControlName="unitcode" class="form-control">
+            <label>Question</label>
+            <textarea style="margin-bottom: 5px"  type="text" formControlName="question" class="form-control" rows="3"></textarea>
+            <label>Answer</label>
+            <textarea style="margin-bottom: 5px" type="text" formControlName="answer" class="form-control" rows="6"></textarea>
+        </div>       
+    </div>
+    <div class="modal-footer">
+        <hr>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

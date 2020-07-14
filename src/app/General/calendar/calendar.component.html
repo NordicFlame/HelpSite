@@ -1,0 +1,22 @@
+<div *ngIf="appUser">
+    <button type="button" class="btn btn-lg btn-outline-primary" (click)="open()" *ngIf="appUser.isAdmin">New +</button>
+    <hr>
+</div>
+
+<div class='app'>
+  
+    <div class='app-calendar' *ngIf="calendarVisible">
+      <full-calendar
+        #calendar
+        defaultView="dayGridMonth"
+        [header]="{
+          left: 'prev,next today',
+          center: 'title',
+          right: 'timeGridWeek,timeGridDay,listWeek'
+        }"
+        [plugins]="calendarPlugins"
+        [weekends]="calendarWeekends"
+        [events]="events"
+      ></full-calendar>
+    </div>
+</div>

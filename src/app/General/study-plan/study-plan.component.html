@@ -1,0 +1,115 @@
+<div *ngIf="appUser">
+    <button type="button" class="btn btn-lg btn-outline-primary" (click)="open()" *ngIf="appUser.isAdmin">New +</button>
+    <hr>
+</div>
+
+<!--In Development-->
+<div class="row">
+
+    <!--List of Units-->
+    <div class="col-4">
+
+        <ul class="list-group">
+            <li *ngFor="let l of filteredUnits" class="list-group-item list-group-item-action" 
+            (click)="addToCart(l)">
+                {{ l.unitcode }} - {{ l.title }}
+            </li>
+        </ul>
+
+    </div>
+    <!--Formatted Study Plan-->
+    <div class="col-8 pl-3">
+        <h3 class="text-center">Study Plan</h3>
+
+        <button class="btn btn-secondary mb-1" (click)="changeDate('1', '1')">Year 1, Semester 1</button>
+        <table class="table">
+            <col width="20">
+            <col width="2000">
+            <tbody>
+                <tr *ngFor="let u of studyplan">
+                    <td *ngIf="u.payload.val().year === '1' && u.payload.val().period === '1'"> {{ u.payload.val().unitcode }} </td>
+                    <td *ngIf="u.payload.val().year === '1' && u.payload.val().period === '1'">  {{ u.payload.val().title }}  </td>
+                    <td *ngIf="u.payload.val().year === '1' && u.payload.val().period === '1'">
+                        <button class="button" (click)="deleteFromCart(u)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-secondary mb-1" (click)="changeDate('1', '2')">Year 1, Semester 2</button>
+        <table class="table">
+            <col width="20">
+            <col width="2000">
+            <tbody>
+                <tr *ngFor="let u of studyplan">
+                    <td *ngIf="u.payload.val().year === '1' && u.payload.val().period === '2'"> {{ u.payload.val().unitcode }} </td>
+                    <td *ngIf="u.payload.val().year === '1' && u.payload.val().period === '2'">  {{ u.payload.val().title }}  </td>
+                    <td *ngIf="u.payload.val().year === '1' && u.payload.val().period === '2'">
+                        <button class="button" (click)="deleteFromCart(u)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-secondary mb-1" (click)="changeDate('2', '1')">Year 2, Semester 1</button>
+        <table class="table">
+            <col width="20">
+            <col width="2000">
+            <tbody>
+                <tr *ngFor="let u of studyplan">
+                    <td *ngIf="u.payload.val().year === '2' && u.payload.val().period === '1'"> {{ u.payload.val().unitcode }} </td>
+                    <td *ngIf="u.payload.val().year === '2' && u.payload.val().period === '1'">  {{ u.payload.val().title }}  </td>
+                    <td *ngIf="u.payload.val().year === '2' && u.payload.val().period === '1'">
+                        <button class="button" (click)="deleteFromCart(u)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-secondary mb-1" (click)="changeDate('2', '2')">Year 2, Semester 2</button>
+        <table class="table">
+            <col width="20">
+            <col width="2000">
+            <tbody>
+                <tr *ngFor="let u of studyplan">
+                    <td *ngIf="u.payload.val().year === '2' && u.payload.val().period === '2'"> {{ u.payload.val().unitcode }} </td>
+                    <td *ngIf="u.payload.val().year === '2' && u.payload.val().period === '2'">  {{ u.payload.val().title }}  </td>
+                    <td *ngIf="u.payload.val().year === '2' && u.payload.val().period === '2'">
+                        <button class="button" (click)="deleteFromCart(u)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-secondary mb-1" (click)="changeDate('3', '1')">Year 3, Semester 1</button>
+        <table class="table">
+            <col width="20">
+            <col width="2000">
+            <tbody>
+                <tr *ngFor="let u of studyplan">
+                    <td *ngIf="u.payload.val().year === '3' && u.payload.val().period === '1'"> {{ u.payload.val().unitcode }} </td>
+                    <td *ngIf="u.payload.val().year === '3' && u.payload.val().period === '1'">  {{ u.payload.val().title }}  </td>
+                    <td *ngIf="u.payload.val().year === '3' && u.payload.val().period === '1'">
+                        <button class="button" (click)="deleteFromCart(u)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-secondary mb-1" (click)="changeDate('3', '2')">Year 3, Semester 2</button>
+        <table class="table">
+            <col width="20">
+            <col width="2000">
+            <tbody>
+                <tr *ngFor="let u of studyplan">
+                    <td *ngIf="u.payload.val().year === '3' && u.payload.val().period === '2'"> {{ u.payload.val().unitcode }} </td>
+                    <td *ngIf="u.payload.val().year === '3' && u.payload.val().period === '2'">  {{ u.payload.val().title }}  </td>
+                    <td *ngIf="u.payload.val().year === '3' && u.payload.val().period === '2'">
+                        <button class="button" (click)="deleteFromCart(u)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<form #f="ngForm" (ngSubmit)="save(f.value)">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Edit FAQ Item</h4>
+            <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="unitcode">Unitcode</label>
+                <input #unitcode="ngModel" [(ngModel)]="faq.unitcode" name="unitcode" id="unitcode" type="text" class="form-control" required>
+                <div class="alert alert-danger" *ngIf="unitcode.touched && unitcode.invalid">
+                    Unitcode is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="question">Question</label>
+                <textarea #question="ngModel" [(ngModel)]="faq.question" name="question" id="question" type="text" class="form-control" rows="3" required></textarea>
+                <div class="alert alert-danger" *ngIf="question.touched && question.invalid">
+                    Question is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="answer">Answer</label>
+                <textarea #answer="ngModel" [(ngModel)]="faq.answer" name="answer" id="answer" type="text" class="form-control" rows="6"></textarea>
+            </div>
+        </div>
+    
+        <div class="modal-footer">
+            <hr>
+            <button class="btn btn-primary">Update</button>
+        </div>
+    </form>
+    
+    
+    

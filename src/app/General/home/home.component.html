@@ -1,0 +1,21 @@
+<div *ngIf="appUser">
+    <button type="button" class="btn btn-lg btn-outline-primary" (click)="open()" *ngIf="appUser.isAdmin">New +</button>
+    <hr>
+</div>
+
+<ul>
+    <li *ngFor="let i of news" class="card mb-3" style="max-width: 960px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img [src]="i.imgURL" class="card-img" appImgFallback>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">{{ i.title }}</h5>
+                <p class="card-text">{{ i.message }}</p>
+                <p class="card-text"><small class="text-muted">Date: {{ i.timestamp.toDate() }}</small></p>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
